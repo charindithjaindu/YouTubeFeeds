@@ -62,7 +62,7 @@ async def get_updates():
                 redis_db.set("LAST_POST", link)
                 try:
                     await sendMessage(
-                        msg, pic, buttons=Button.url("Watch Now!", url=link)
+                        msg+"\n\n"+link, pic
                     )
                     await asyncio.sleep(check_time)
                 except Exception as e:
